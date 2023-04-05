@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <link th:replace="fragments/bootstrap :: bootstrap">
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<div th:replace="fragments/navbar :: navbar"></div>
+<div th:replace="fragments/header :: header"></div>
+<h2>Welcome to my blog!</h2>
+<p>This is the home page.</p>
+<div th:each="post : ${posts}">
+    <h2 th:text="${post.title}"></h2>
+    <p th:text="${post.body}"></p>
+</div>
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>
